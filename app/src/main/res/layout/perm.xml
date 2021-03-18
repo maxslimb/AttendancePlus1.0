@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".perm">
+    <TextView
+        android:id="@+id/te1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Please Enable Location to Continue"
+        android:textAlignment="center"
+        android:gravity="center"
+        android:visibility="invisible"
+        android:layout_marginTop="200dp"
+        android:textSize="25sp"></TextView>
+    <TextView
+        android:id="@+id/te2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Please Enable Location And Wifi to Continue"
+        android:textAlignment="center"
+        android:visibility="invisible"
+        android:layout_marginTop="200dp"
+        android:textSize="25sp"></TextView>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/te2"
+        android:id="@+id/per"
+        android:layout_marginTop="121dp"
+        android:text="Continue"
+        android:gravity="center_horizontal"
+        android:layout_marginLeft="160dp"
+        android:textSize="20sp"
+        tools:visibility=""></Button>
+
+</RelativeLayout>
