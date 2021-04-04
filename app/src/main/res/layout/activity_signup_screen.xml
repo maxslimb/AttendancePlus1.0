@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".signup_screen"
+    tools:context=".auth.Signup"
     android:padding="16dp">
 
 
@@ -106,7 +106,7 @@
 
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/dob1"
+                    android:id="@+id/idno"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Admission Number"
@@ -168,21 +168,20 @@
                 android:id="@+id/seco"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
                 app:boxBackgroundMode="outline"
                 app:boxCornerRadiusBottomEnd="30dp"
                 app:boxCornerRadiusBottomStart="30dp"
                 app:boxCornerRadiusTopEnd="30dp"
-                android:layout_marginTop="10dp"
                 app:boxCornerRadiusTopStart="30dp"
-                app:layout_constraintBottom_toTopOf="pass"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/division">
 
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:layout_width="match_parent"
                     android:id="@+id/seco1"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Secret Code"
                     android:inputType="text" />

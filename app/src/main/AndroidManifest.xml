@@ -16,8 +16,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AttendancePlus">
-        <activity android:name=".login_screen"></activity>
-        <activity android:name=".signup_screen" />
+        <activity android:name=".auth.Login" />
+        <activity android:name=".auth.Signup" />
         <activity android:name=".Launch_screen" />
         <activity android:name=".maina">
             <intent-filter>
