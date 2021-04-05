@@ -16,6 +16,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AttendancePlus">
+        <activity android:name=".teacher_signup_screen" />
+        <activity android:name=".profile_screen" />
+        <activity android:name=".my_account_screen" />
         <activity android:name=".auth.Login" />
         <activity android:name=".auth.Signup" />
         <activity android:name=".Launch_screen" />
