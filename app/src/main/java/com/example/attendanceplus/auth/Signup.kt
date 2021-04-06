@@ -2,11 +2,13 @@ package com.example.attendanceplus.auth
 
 import android.annotation.SuppressLint
 import android.content.Context
+import android.content.Intent
 import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import com.example.attendanceplus.R
+import com.example.attendanceplus.maina
 import kotlinx.android.synthetic.main.activity_signup_screen.*
 
 class Signup : AppCompatActivity() {
@@ -29,9 +31,9 @@ class Signup : AppCompatActivity() {
                         editor.putString("Class",iname.text.toString())
                         editor.putString("division",division1.text.toString())
                         editor.putString("secret-code",seco1.text.toString())
-                        editor.putString("pass1",pass1.text.toString())
+                        editor.putString("pass",pass1.text.toString())
                         editor.commit()
-                       // startActivity(Intent(this@signup_screen,mania::class.java))
+                        startActivity(Intent(this@Signup,maina::class.java))
                     }
                 else{
                     Toast.makeText(applicationContext,"Password does not match!",Toast.LENGTH_SHORT).show()

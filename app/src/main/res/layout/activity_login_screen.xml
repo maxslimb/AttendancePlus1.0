@@ -13,7 +13,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Attendance Plus"
-        android:textColor="#53b175"
+        android:textColor="#52ACFF"
         android:textSize="30dp"
         android:textStyle="bold"
         android:layout_marginTop="200dp"

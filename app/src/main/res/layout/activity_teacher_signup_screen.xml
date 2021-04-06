@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".teacher_signup_screen"
+    tools:context=".auth.teacher_signup_screen"
     android:padding="16dp">
 
 
@@ -106,7 +106,7 @@
 
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/idno"
+                    android:id="@+id/department"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Department"
@@ -133,7 +133,7 @@
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
-                    android:id="@+id/iname"
+                    android:id="@+id/year"
                     android:layout_height="wrap_content"
                     android:hint="Year"
                     android:inputType="text" />
