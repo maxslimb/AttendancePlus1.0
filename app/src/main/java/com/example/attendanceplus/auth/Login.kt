@@ -18,7 +18,7 @@ class Login : AppCompatActivity() {
         val pass = pass1.text.toString()
         if ((email.isNotEmpty()) && (pass.isNotEmpty()))
          {
-                if((email == sharedPreferences.getString("email","") )
+                if((email == sharedPreferences.getString("email",""))
                         && (pass == sharedPreferences.getString("pass",""))){
                     startActivity(Intent(applicationContext,Home_Screen::class.java))
                 }

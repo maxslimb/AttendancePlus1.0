@@ -32,6 +32,7 @@ class Signup : AppCompatActivity() {
                         editor.putString("division",division1.text.toString())
                         editor.putString("secret-code",seco1.text.toString())
                         editor.putString("pass",pass1.text.toString())
+                        editor.putString("type", "student")
                         editor.commit()
                         startActivity(Intent(this@Signup,maina::class.java))
                     }

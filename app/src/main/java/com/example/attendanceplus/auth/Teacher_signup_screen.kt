@@ -31,6 +31,7 @@ class Teacher_signup_screen : AppCompatActivity() {
                     editor.putString("division",division1.text.toString())
                     editor.putString("secret-code",seco1.text.toString())
                     editor.putString("pass",pass1.text.toString())
+                    editor.putString("type", "teacher")
                     editor.commit()
                     startActivity(Intent(this@Teacher_signup_screen,maina::class.java))
                 }
