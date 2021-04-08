@@ -11,7 +11,7 @@ class perm : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.perm)
-
+// required location and wifi
         per.visibility = View.VISIBLE
         te2.visibility = View.VISIBLE
         per.setOnClickListener{

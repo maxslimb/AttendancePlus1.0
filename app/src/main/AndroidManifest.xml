@@ -22,8 +22,8 @@
         <activity android:name=".my_account_screen" />
         <activity android:name=".auth.Login" />
         <activity android:name=".auth.Signup" />
-        <activity android:name=".Launch_screen" />
-        <activity android:name=".maina">
+        <activity android:name=".maina" />
+        <activity android:name=".Launch_screen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
