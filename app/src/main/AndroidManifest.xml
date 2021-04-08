@@ -16,10 +16,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AttendancePlus">
-        <activity android:name=".login_screen"></activity>
-        <activity android:name=".signup_screen" />
-        <activity android:name=".Launch_screen" />
-        <activity android:name=".maina">
+        <activity android:name=".Home_Screen"/>
+        <activity android:name=".auth.Teacher_signup_screen" />
+        <activity android:name=".profile_screen" />
+        <activity android:name=".my_account_screen" />
+        <activity android:name=".auth.Login" />
+        <activity android:name=".auth.Signup" />
+        <activity android:name=".maina" />
+        <activity android:name=".Launch_screen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

@@ -3,9 +3,9 @@ package com.example.attendanceplus
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 
-class signup_screen : AppCompatActivity() {
+class Home_Screen : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_signup_screen)
+        setContentView(R.layout.activity_home__screen)
     }
 }

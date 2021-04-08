@@ -10,6 +10,7 @@ class perm1 : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.perm)
+// required location
 
         per.visibility = View.VISIBLE
         te1.visibility = View.VISIBLE
