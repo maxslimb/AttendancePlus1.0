@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".mainb">
+
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -12,23 +13,21 @@
         android:layout_gravity="center_horizontal"
         android:layout_marginVertical="225dp"
         android:id="@+id/code"
-        android:textSize="25dp"
-        ></EditText>
+        android:textSize="25dp"/>
+
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Connect"
         android:layout_gravity="center_horizontal"
-        android:id="@+id/con"
-        ></Button>
+        android:id="@+id/con"/>
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="ATTENDANCE"
         android:layout_gravity="center_horizontal"
-        android:id="@+id/att"
-        ></Button>
+        android:id="@+id/att"/>
 
 
 
