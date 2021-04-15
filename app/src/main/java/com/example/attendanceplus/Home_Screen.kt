@@ -11,7 +11,7 @@ class Home_Screen : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home__screen)
         lbutton1.setOnClickListener {
-            startActivity(Intent(this@Home_Screen, perm::class.java))
+            startActivity(Intent(this@Home_Screen, perm1::class.java))
         }
 
         bottom_navigation_view.selectedItemId = R.id.home

@@ -1,3 +1,5 @@
+
+
 package com.example.attendanceplus
 
 import android.Manifest
@@ -15,6 +17,15 @@ import android.widget.*
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
+import com.karumi.dexter.Dexter
+import com.karumi.dexter.MultiplePermissionsReport
+import com.karumi.dexter.PermissionToken
+import com.karumi.dexter.listener.PermissionDeniedResponse
+import com.karumi.dexter.listener.PermissionGrantedResponse
+import com.karumi.dexter.listener.PermissionRequest
+import com.karumi.dexter.listener.multi.MultiplePermissionsListener
+import com.karumi.dexter.listener.single.BasePermissionListener
+import com.karumi.dexter.listener.single.PermissionListener
 import kotlinx.android.synthetic.main.main.*
 import java.io.DataInputStream
 import java.io.DataOutputStream
@@ -36,6 +47,10 @@ class main : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.main)
         val intent = intent
+        imei.text = "SUCCESS"
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+            turnOnHotspot()
+        }
         t = findViewById(R.id.imei)
         ip = findViewById(R.id.ip)
         val clientList = findViewById<ListView>(R.id.lv_client_list)
@@ -54,11 +69,10 @@ class main : AppCompatActivity() {
     @RequiresApi(api = Build.VERSION_CODES.O)
     private fun turnOnHotspot() {
         val manager = applicationContext.getSystemService(WIFI_SERVICE) as WifiManager
-        if (ActivityCompat.checkSelfPermission(
-                this,
-                Manifest.permission.ACCESS_FINE_LOCATION
-            ) != PackageManager.PERMISSION_GRANTED
-        ) {
+
+
+
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
             // TODO: Consider calling
             //    ActivityCompat#requestPermissions
             // here to request the missing permissions, and then overriding
@@ -69,13 +83,12 @@ class main : AppCompatActivity() {
             return
         }
         manager.startLocalOnlyHotspot(object : LocalOnlyHotspotCallback() {
+            @RequiresApi(Build.VERSION_CODES.R)
             override fun onStarted(reservation: LocalOnlyHotspotReservation) {
                 super.onStarted(reservation)
                 Log.e(TAG, "Wifi Hotspot is on now")
-                mReservation = reservation
-                var ma: WifiConfiguration? = WifiConfiguration()
-                ma = reservation.wifiConfiguration
-                t!!.text = ma!!.preSharedKey
+                imei.text = reservation.wifiConfiguration!!.preSharedKey
+                //reservation.softApConfiguration.passphrase?.let { Log.d("jjkjjjj ", it) }
             }
 
             override fun onStopped() {
@@ -181,9 +194,9 @@ class main : AppCompatActivity() {
 
     init {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            turnOnHotspot()
+
             startServer()
         }
-        t!!.text = "SUCCESS"
+
     }
 }
