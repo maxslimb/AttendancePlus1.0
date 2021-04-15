@@ -6,6 +6,7 @@ import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import com.example.attendanceplus.Home_Screen
 import com.example.attendanceplus.R
 import com.example.attendanceplus.maina
 import kotlinx.android.synthetic.main.activity_teacher_signup_screen.*
@@ -33,7 +34,7 @@ class Teacher_signup_screen : AppCompatActivity() {
                     editor.putString("pass",pass1.text.toString())
                     editor.putString("type", "teacher")
                     editor.commit()
-                    startActivity(Intent(this@Teacher_signup_screen,maina::class.java))
+                    startActivity(Intent(this@Teacher_signup_screen, Home_Screen::class.java))
                 }
                 else{
                     Toast.makeText(applicationContext,"Password does not match!", Toast.LENGTH_SHORT).show()

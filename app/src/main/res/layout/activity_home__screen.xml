@@ -38,6 +38,7 @@
             android:layout_marginTop="50dp"
             android:background="@drawable/login_screen_button"
             android:text="Take Attendance"
+            android:visibility="gone"
             android:textSize="25dp"
             android:textAllCaps="false"
             app:layout_constraintEnd_toEndOf="parent"

@@ -34,11 +34,11 @@ class Launch_screen : AppCompatActivity() {
                 }
                 sharedPreferences.getString("type","")=="teacher" -> {
                     Log.d("log","a==teacher")
-                    startActivity(Intent(this@Launch_screen, perm1::class.java))
+                    startActivity(Intent(this@Launch_screen, Home_Screen::class.java))
                 }
                 sharedPreferences.getString("type","")=="student" -> {
                     Log.d("log","a==student")
-                    startActivity(Intent(this@Launch_screen, perm::class.java))
+                    startActivity(Intent(this@Launch_screen, Home_Screen::class.java))
                 }
             }
         }, 5000)
