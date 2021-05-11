@@ -3,6 +3,7 @@
 package com.example.attendanceplus
 
 import android.Manifest
+import android.content.Intent
 import android.content.pm.PackageManager
 import android.net.wifi.WifiConfiguration
 import android.net.wifi.WifiManager
@@ -42,28 +43,26 @@ class main : AppCompatActivity() {
     var adapter: ArrayAdapter<*>? = null
     var socketServerThread: Thread? = null
     var t: TextView? = null
-    var ip: TextView? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.main)
-        val intent = intent
         imei.text = "SUCCESS"
-        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             turnOnHotspot()
         }
         t = findViewById(R.id.imei)
-        ip = findViewById(R.id.ip)
         val clientList = findViewById<ListView>(R.id.lv_client_list)
         rollNoList = ArrayList()
         adapter = ArrayAdapter<Any?>(this, android.R.layout.simple_list_item_1,
             rollNoList!! as List<Any?>
         )
-        clientList.setAdapter(adapter)
+        clientList.adapter = adapter
         main()
-       st.setOnClickListener(View.OnClickListener {
+       st.setOnClickListener{
             stopServer()
             turnOffHotspot()
-        })
+           startActivity(Intent(this@main, Home_Screen::class.java))
+        }
     }
 
     @RequiresApi(api = Build.VERSION_CODES.O)

@@ -46,8 +46,7 @@
             android:hint="Enter the Code"
             android:gravity="center"
             android:textSize="20dp"
-            android:importantForAutofill="auto"
-            android:inputType="textEmailAddress" />
+            android:inputType="textVisiblePassword" />
 
     </com.google.android.material.textfield.TextInputLayout>
 

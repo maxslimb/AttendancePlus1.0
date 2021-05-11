@@ -21,25 +21,25 @@ import java.io.IOException
 import java.net.Socket
 import java.net.UnknownHostException
 
-class mainb : AppCompatActivity() {
+open class mainb : AppCompatActivity() {
     var response = ""
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.mainb)
         att.setOnClickListener {
-            MyClientTask(this).execute()
+            MyClientTask().execute()
         }
         con.setOnClickListener { wifion() }
     }
 
-    protected fun wifion() {
+    private fun wifion() {
         val ssid = "AndroidShare"
         val pt = PatternMatcher(ssid, 1)
         var builder: WifiNetworkSpecifier.Builder? = null
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
             builder = WifiNetworkSpecifier.Builder()
             builder.setSsidPattern(pt)
-            builder.setWpa2Passphrase(code1!!.text.toString())
+            builder.setWpa2Passphrase(code1.text.toString())
             val wifiNetworkSpecifier = builder.build()
             val networkRequestBuilder1 = NetworkRequest.Builder()
             networkRequestBuilder1.addTransportType(NetworkCapabilities.TRANSPORT_WIFI)
@@ -60,10 +60,10 @@ class mainb : AppCompatActivity() {
     }
 
     @SuppressLint("StaticFieldLeak")
-     inner class MyClientTask internal constructor(mainb: mainb) : AsyncTask<Void?, Void?, Void?>() {
+     inner class MyClientTask internal constructor() : AsyncTask<Void?, Void?, Void?>() {
         var dstAddress = "192.168.43.1"
         var dstPort = 8081
-        protected override fun doInBackground(vararg p0: Void?): Void? {
+        override fun doInBackground(vararg p0: Void?): Void? {
             var socket: Socket? = null
             var dataOutputStream: DataOutputStream? = null
             var dataInputStream: DataInputStream? = null

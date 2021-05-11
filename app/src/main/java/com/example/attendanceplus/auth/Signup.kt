@@ -10,7 +10,6 @@ import android.util.Log
 import android.widget.Toast
 import com.example.attendanceplus.Home_Screen
 import com.example.attendanceplus.R
-import com.example.attendanceplus.maina
 import kotlinx.android.synthetic.main.activity_signup_screen.*
 import org.json.JSONException
 import org.json.JSONObject
@@ -32,19 +31,24 @@ class Signup : AppCompatActivity() {
                 (idno.text.toString().isNotEmpty()) && (iname.text.toString().isNotEmpty()) &&
                 (division1.text.toString().isNotEmpty()) && (seco1.text.toString().isNotEmpty()) &&
                 (pass1.text.toString().isNotEmpty()) && (repass1.text.toString().isNotEmpty())
-            ) {   Log.e("json get",jsonObject.getString(idno.text.toString()))
-                    if (pass1.text.toString() == repass1.text.toString()){
+            ) {
+                    if ((pass1.text.toString() == repass1.text.toString())&&(jsonObject.optString(idno.text.toString().toUpperCase())==seco1.text.toString())){
                         val editor: SharedPreferences.Editor= sharedPreferences.edit()
                         editor.putString("name", sname.text.toString())
                         editor.putString("email", semail.text.toString())
                         editor.putString("admin-no",idno.text.toString())
-                        editor.putString("Class",iname.text.toString())
+                        editor.putString("Class",iname.text.toString().toUpperCase())
                         editor.putString("division",division1.text.toString())
                         editor.putString("secret-code",seco1.text.toString())
                         editor.putString("pass",pass1.text.toString())
                         editor.putString("type", "student")
                         editor.commit()
                         startActivity(Intent(this@Signup,Home_Screen::class.java))
+                        Toast.makeText(applicationContext,"Welcome to Attendance Plus!",Toast.LENGTH_SHORT).show()
+                    }
+                else if(jsonObject.optString(idno.text.toString())!=seco1.text.toString()){
+                        Log.e("upper",idno.text.toString().toUpperCase())
+                        Toast.makeText(applicationContext,"Secret Code is not valid",Toast.LENGTH_SHORT).show()
                     }
                 else{
                     Toast.makeText(applicationContext,"Password does not match!",Toast.LENGTH_SHORT).show()

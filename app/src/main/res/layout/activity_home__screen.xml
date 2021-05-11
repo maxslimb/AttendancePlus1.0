@@ -49,6 +49,7 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
+                    android:id="@+id/year"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Third Year"
@@ -88,7 +89,7 @@
                     android:id="@+id/textView8"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="46"
+                    android:text="0"
                     android:textColor="#F3EFEF"
                     android:layout_marginTop="15dp"
                     android:textSize="18dp"
@@ -102,6 +103,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="/"
+                    android:visibility="gone"
                     android:textColor="#F3EFEF"
                     android:layout_marginTop="15dp"
                     android:textSize="18dp"
@@ -117,6 +119,7 @@
                     android:layout_marginLeft="2dp"
                     android:layout_marginTop="15dp"
                     android:text="50"
+                    android:visibility="gone"
                     android:textColor="#F3EFEF"
                     android:textSize="18dp"
                     app:layout_constraintStart_toEndOf="@+id/textView9"
@@ -140,7 +143,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
-                    android:text="92"
+                    android:text="0"
                     android:textColor="#F3EFEF"
                     android:layout_marginTop="5dp"
                     android:textSize="18dp"
