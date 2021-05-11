@@ -39,7 +39,7 @@ class mainb : AppCompatActivity() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
             builder = WifiNetworkSpecifier.Builder()
             builder.setSsidPattern(pt)
-            builder.setWpa2Passphrase(code!!.text.toString())
+            builder.setWpa2Passphrase(code1!!.text.toString())
             val wifiNetworkSpecifier = builder.build()
             val networkRequestBuilder1 = NetworkRequest.Builder()
             networkRequestBuilder1.addTransportType(NetworkCapabilities.TRANSPORT_WIFI)

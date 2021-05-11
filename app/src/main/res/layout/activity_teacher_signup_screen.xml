@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".auth.teacher_signup_screen"
+    tools:context=".auth.Teacher_signup_screen"
     android:padding="16dp">
 
 
@@ -56,6 +56,7 @@
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/sname"
+                    android:padding="15dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Name"
@@ -83,6 +84,7 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:id="@+id/semail"
+                    android:padding="15dp"
                     android:layout_height="wrap_content"
                     android:hint="Email Address"
                     android:inputType="textWebEmailAddress" />
@@ -107,6 +109,7 @@
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/department"
+                    android:padding="15dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Department"
@@ -134,6 +137,7 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:id="@+id/year"
+                    android:padding="15dp"
                     android:layout_height="wrap_content"
                     android:hint="Year"
                     android:inputType="text" />
@@ -158,6 +162,7 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:id="@+id/division1"
+                    android:padding="15dp"
                     android:layout_height="wrap_content"
                     android:hint="Division"
                     android:inputType="text" />
@@ -182,6 +187,7 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/seco1"
                     android:layout_width="match_parent"
+                    android:padding="15dp"
                     android:layout_height="wrap_content"
                     android:hint="Secret Code"
                     android:inputType="text" />
@@ -207,6 +213,7 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:id="@+id/pass1"
+                    android:padding="15dp"
                     android:layout_height="wrap_content"
                     android:hint="Password"
                     android:inputType="textPassword" />
@@ -231,6 +238,7 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:id="@+id/repass1"
+                    android:padding="15dp"
                     android:layout_height="wrap_content"
                     android:hint="Re-enter Password"
                     android:inputType="textPassword" />
