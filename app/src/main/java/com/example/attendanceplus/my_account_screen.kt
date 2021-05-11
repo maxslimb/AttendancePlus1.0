@@ -10,10 +10,10 @@ class my_account_screen : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_my_account_screen)
         val sharedPreferences = getSharedPreferences("user_data", Context.MODE_PRIVATE)
-        name1.setText(sharedPreferences.getString("name",""))
-        email1.setText(sharedPreferences.getString("email",""))
-        dob1.setText(sharedPreferences.getString("admin-no",""))
-        grade1.setText(sharedPreferences.getString("Class",""))
-        institution1.setText(sharedPreferences.getString("division",""))
+        nameteacher.setText(sharedPreferences.getString("name",""))
+        emailteacher.setText(sharedPreferences.getString("email",""))
+        deptteacher.setText(sharedPreferences.getString("admin-no",""))
+        yearteacher.setText(sharedPreferences.getString("Class",""))
+        divteacher.setText(sharedPreferences.getString("division",""))
     }
 }

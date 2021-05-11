@@ -15,9 +15,9 @@ class Login : AppCompatActivity() {
         setContentView(R.layout.activity_login_screen)
         val sharedPreferences = getSharedPreferences("user_data", Context.MODE_PRIVATE)
         lbutton.setOnClickListener {
-            if ((email1.text.toString().isNotEmpty()) && (pass1.text.toString().isNotEmpty()))
+            if ((emailteacher.text.toString().isNotEmpty()) && (pass1.text.toString().isNotEmpty()))
             {
-                if((email1.text.toString() == sharedPreferences.getString("email",""))
+                if((emailteacher.text.toString() == sharedPreferences.getString("email",""))
                         && (pass1.text.toString() == sharedPreferences.getString("pass",""))){
                     startActivity(Intent(applicationContext,Home_Screen::class.java))
                 }
