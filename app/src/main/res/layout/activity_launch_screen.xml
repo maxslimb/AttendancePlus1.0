@@ -6,18 +6,17 @@
     android:layout_height="match_parent"
     tools:context=".Launch_screen">
 
-    <TextView
-        android:id="@+id/titleapp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/app_name"
-        android:textStyle="bold"
-        android:textSize="75sp"
-        android:textAlignment="center"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="251dp"
+        android:foregroundGravity="center"
+        android:layout_marginTop="145dp"
+        android:layout_height="305dp"
+        android:src="@drawable/app_logo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
     <Button
         android:id="@+id/teacher"
         android:visibility="gone"

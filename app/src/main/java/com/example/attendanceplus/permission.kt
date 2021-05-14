@@ -7,6 +7,7 @@ import android.content.IntentSender
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
+import com.example.attendanceplus.auth.Login
 import com.google.android.gms.common.api.ResolvableApiException
 import com.google.android.gms.location.*
 import com.google.android.gms.tasks.Task
@@ -95,13 +96,18 @@ class permission : AppCompatActivity() {
                 }
             }
         }
+        var intent:Intent
         per.setOnClickListener {
             when{
                 sharedPreferences.getString("type","")=="teacher" -> {
-                    this@permission.startActivity(Intent(this@permission, main::class.java))
+                    intent = Intent(this@permission, main::class.java)
+                    intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK.or(Intent.FLAG_ACTIVITY_NEW_TASK)
+                    this@permission.startActivity(intent)
                 }
                 sharedPreferences.getString("type","")=="student" -> {
-                    this@permission.startActivity(Intent(this@permission, mainb::class.java))
+                    intent = Intent(this@permission, mainb::class.java)
+                    intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK.or(Intent.FLAG_ACTIVITY_NEW_TASK)
+                    this@permission.startActivity(intent)
                 }
             }
 

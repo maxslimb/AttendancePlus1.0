@@ -20,7 +20,7 @@ class Launch_screen : AppCompatActivity() {
         val sharedPreferences = getSharedPreferences("user_data", Context.MODE_PRIVATE)
        val a = sharedPreferences.getBoolean("save-acc",false)
         val b =sharedPreferences.getBoolean("login",false)
-        titleapp.postDelayed({ titleapp.visibility = View.GONE
+        imageView.postDelayed({ imageView.visibility = View.GONE
 
             when {
                 !a&&!b -> {
@@ -53,7 +53,7 @@ class Launch_screen : AppCompatActivity() {
                     startActivity(Intent(this@Launch_screen, Home_Screen::class.java))
                 }
             }
-        }, 1000)
+        }, 2000)
 
     }
 }

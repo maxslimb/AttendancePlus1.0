@@ -27,7 +27,7 @@ open class mainb : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.mainb)
         att.setOnClickListener {
-            MyClientTask().execute()
+            MyClientTask().execute();
         }
         con.setOnClickListener { wifion() }
     }
@@ -48,7 +48,7 @@ open class mainb : AppCompatActivity() {
             val networkCallback: NetworkCallback
             val context = applicationContext
             val cm = context.getSystemService(CONNECTIVITY_SERVICE) as ConnectivityManager
-            networkCallback = object : NetworkCallback() {
+            networkCallback = object : ConnectivityManager.NetworkCallback() {
                 override fun onAvailable(network: Network) {
                     super.onAvailable(network)
                     Log.d(TAG, "onAvailable:$network")

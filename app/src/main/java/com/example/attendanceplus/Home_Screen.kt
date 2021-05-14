@@ -20,10 +20,14 @@ class Home_Screen : AppCompatActivity() {
         when{sharedPreferences.getString("type","")=="teacher" -> {
             lbutton1.visibility =View.GONE
             lbutton.visibility = View.VISIBLE
+            cardView.visibility = View.GONE
+            tcard.visibility = View.VISIBLE
         }
             sharedPreferences.getString("type","")=="student" -> {
                 lbutton1.visibility =View.VISIBLE
                 lbutton.visibility = View.GONE
+                cardView.visibility = View.VISIBLE
+                tcard.visibility = View.GONE
             }
         }
 

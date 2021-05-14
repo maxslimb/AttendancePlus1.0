@@ -19,7 +19,14 @@ class profile_screen : AppCompatActivity() {
         setContentView(R.layout.activity_profile_screen)
         val sharedPreferences = getSharedPreferences("user_data", Context.MODE_PRIVATE)
         myaccount.setOnClickListener {
-            startActivity(Intent(this@profile_screen, my_account_screen::class.java))
+            when{
+               sharedPreferences.getString("type","")=="teacher" ->{
+                startActivity(Intent(this@profile_screen, my_account_screen_teacher::class.java))
+               }
+                sharedPreferences.getString("type","")=="student" ->{
+                    startActivity(Intent(this@profile_screen, my_account_screen::class.java))
+                }
+            }
         }
         imageView14.setOnClickListener {
             Toast.makeText(applicationContext,"Coming Soon!",Toast.LENGTH_SHORT).show()
@@ -28,9 +35,13 @@ class profile_screen : AppCompatActivity() {
            // sharedPreferences.edit().clear().apply()  -- delete acc
             sharedPreferences.edit().putBoolean("login",false).apply()
             sharedPreferences.edit().putBoolean("save-acc",true).apply()
-            startActivity(Intent(this@profile_screen, Login::class.java))
+            val intent = Intent(this@profile_screen, Login::class.java)  //Login
+            intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK.or(Intent.FLAG_ACTIVITY_NEW_TASK)
+            startActivity(intent)
         }
-       namefield.text = sharedPreferences.getString("name","")
+
+
+        namefield.text = sharedPreferences.getString("name","")
         std.text = "Class of Study: ${sharedPreferences.getString("Class","")}"
 
         bottom_navigation_view1.selectedItemId = R.id.profile
